@@ -8,6 +8,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    position: "sticky",
+    top: "0",
+    zIndex: 99,
   },
   headerContent: {
     display: "flex",
@@ -21,6 +24,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   menuTabListContainer: {
     display: "flex",
     gap: "3rem",
-    "&>p": { fontWeight: 500 },
+    "&>p": { fontWeight: 500, cursor: "pointer" },
   },
 }));

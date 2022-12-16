@@ -1,26 +1,44 @@
 import React from "react";
-import { Button } from "@mui/material";
-import logo from "../../logo.svg";
+import { Box } from "@mui/system";
+import SlideBanner from "./SlideBanner";
+import OurStory from "./Story";
+import Packages from "./packages";
 
 const index = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code>Home
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Home
-        </a>
-        <Button variant="outlined">abc</Button>
-      </header>
-    </div>
+    <Box>
+      <SlideBanner />
+      <OurStory />
+      <Box
+        style={{
+          display: "block",
+          textAlign: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <img
+          style={{ display: "block", maxWidth: "100%", height: "auto" }}
+          src="https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/mockup-2-bg-min.jpg"
+          alt=""
+        />
+      </Box>
+      <Packages />
+      <Box
+        style={{
+          display: "block",
+          textAlign: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <img
+          style={{ display: "block", maxWidth: "100%", height: "auto" }}
+          src="https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/mockup-2-bg-min.jpg"
+          alt=""
+        />
+      </Box>
+    </Box>
   );
 };
 export default index;
