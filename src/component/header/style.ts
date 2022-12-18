@@ -26,4 +26,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     gap: "3rem",
     "&>p": { fontWeight: 500, cursor: "pointer" },
   },
+  activeMenu: {
+    color: theme.palette.primary.main,
+    fontWeight: "bold !important",
+  },
 }));

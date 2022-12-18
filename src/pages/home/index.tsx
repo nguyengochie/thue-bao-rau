@@ -4,26 +4,14 @@ import SlideBanner from "./SlideBanner";
 import OurStory from "./Story";
 import Packages from "./packages";
 import ListProducts from "pages/combo/listProduct";
+import ImageProduct from "./ImageProducts";
 
 const index = () => {
   return (
     <Box>
       <SlideBanner />
       <OurStory />
-      <Box
-        style={{
-          display: "block",
-          textAlign: "center",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
-        <img
-          style={{ display: "block", maxWidth: "100%", height: "auto" }}
-          src="https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/mockup-2-bg-min.jpg"
-          alt=""
-        />
-      </Box>
+      <ImageProduct />
       <Packages />
       <ListProducts />
     </Box>

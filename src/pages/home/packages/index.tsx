@@ -4,21 +4,68 @@ import React from "react";
 import { theme } from "theme";
 import { useStyles } from "./style";
 
-const LIST_INFOR = [
+const LIST_INFOR_P1 = [
+  { key: "Mô tả", value: "Tối ưu cho 1 - 2 người" },
   { key: "Thời lượng", value: "01 tuần" },
-  { key: "Khối lượng", value: "~ 10 kg/tuần" },
-  { key: "Số lượng", value: "~ 05 kg/hộp" },
-  { key: "Trọng lượng", value: "~ 05 kg/hộp" },
-  { key: "Tần suất", value: "02 hộp/tuần (03 ngày/hộp)" },
-  { key: "Chủng loại", value: "10 Rau gia vị, 8 Rau ăn chính" },
+  { key: "Khối lượng", value: "2kg rau củ, 500gr rau gia vị" },
+  { key: "Chủng loại", value: "5 loại rau củ, 3 loại rau gia vị" },
   { key: "Giao nhận", value: "tận Văn phòng" },
 ];
+const LIST_INFOR_P2 = [
+  { key: "Mô tả", value: "Tối ưu cho 1 - 2 người" },
+  { key: "Thời lượng", value: "01 tuần" },
+  { key: "Khối lượng", value: "3kg rau củ,500gr rau gia vị" },
+  { key: "Chủng loại", value: "10 loại rau củ, 6 loại rau gia vị" },
+  { key: "Giao nhận", value: "Tại cửa hàng, vào buổi sáng" },
+];
+const LIST_INFOR_P3 = [
+  { key: "Mô tả", value: "Tối ưu cho gia đình từ 3 - 4 người" },
+  { key: "Thời lượng", value: "01 tuần" },
+  { key: "Khối lượng", value: "4kg rau củ, 500 gr rau gia vị" },
+  { key: "Chủng loại", value: "10 loại rau củ, 6 loại rau gia vị" },
+  { key: "Giao nhận", value: "Tại cửa hàng, vào buổi sáng" },
+];
+const LIST_INFOR_P4 = [
+  { key: "Mô tả", value: "Tối ưu cho gia đình từ 3 - 4 người" },
+  { key: "Thời lượng", value: "01 tuần" },
+  { key: "Khối lượng", value: "5kg rau củ, 700 gr rau gia vị" },
+  { key: "Chủng loại", value: "15 loại rau củ, 9 loại rau gia vị" },
+  { key: "Giao nhận", value: "Tại cửa hàng, vào buổi sáng" },
+];
+
+const GOI_1 = {
+  name: "Gói P1 basic",
+  description:
+    "Dành cho người nội trợ đơn giản, hướng đến bữa ăn đơn giản, tiết kiệm thời gian",
+  price: "299.000",
+  info: LIST_INFOR_P1,
+};
+const GOI_2 = {
+  name: "Gói P1 advance",
+  description: `Dành cho người nội trợ có nhiều thời gian chuẩn bị hơn
+    mỗi bữa có từ 2 món chính trở lên`,
+  price: "399.000",
+  info: LIST_INFOR_P2,
+};
+const GOI_3 = {
+  name: "Gói P2 basic",
+  description: `Dành cho người nội trợ đơn giản, hướng đến bữa ăn đơn giản, tiết kiệm thời gian`,
+  price: "499.000",
+  info: LIST_INFOR_P3,
+};
+const GOI_4 = {
+  name: "Gói P2 advance",
+  description: `Dành cho người nội trợ có nhiều thời gian chuẩn bị hơn
+  mỗi bữa có từ 2 món chính trở lên`,
+  price: "699.000",
+  info: LIST_INFOR_P4,
+};
 
 const Packages = () => {
   const classes = useStyles();
 
-  const renderInfor = () => {
-    return LIST_INFOR.map((item) => {
+  const renderInfor = (info: any) => {
+    return info.map((item: any) => {
       return (
         <Typography
           style={{
@@ -35,7 +82,7 @@ const Packages = () => {
   };
 
   const renderPackage = (
-    name: string,
+    { name, description, price, info }: any,
     bgColor: string,
     isActivePrice?: boolean
   ) => {
@@ -70,7 +117,7 @@ const Packages = () => {
               marginBottom: 20,
             }}
           >
-            Tối ưu 01 gia đình 3-4 người/tuần
+            {description}
           </Typography>
           <Typography
             style={{
@@ -79,11 +126,11 @@ const Packages = () => {
               ...(isActivePrice && { color: theme.palette.primary.main }),
             }}
           >
-            499.000
+            {price}
             <span style={{ fontWeight: 400, fontSize: 22 }}>/Tuần</span>
           </Typography>
         </Box>
-        <Box style={{ padding: 30 }}>{renderInfor()}</Box>
+        <Box style={{ padding: 30 }}>{renderInfor(info)}</Box>
         <Button
           variant="contained"
           style={{
@@ -131,49 +178,17 @@ const Packages = () => {
       </Typography>
       <Box
         display="flex"
-        style={{ padding: "100px 0", justifyContent: "center" }}
+        style={{ padding: "100px 0", justifyContent: "center", gap: "15px" }}
       >
-        <Box
-          style={{
-            minHeight: 580,
-            width: 390,
-            border: `2px solid ${theme.palette.primary.main}`,
-            boxShadow: "0 2px 5px 3px #eff1f8",
-            padding: 10,
-            textAlign: "center",
-            boxSizing: "border-box",
-          }}
-        >
-          {renderPackage("Gói P1", "#f7f8fa")}
+        <Box className={classes.box}>{renderPackage(GOI_1, "#f7f8fa")}</Box>
+
+        <Box className={classes.box2}>
+          {renderPackage(GOI_2, theme.palette.primary.light, true)}
         </Box>
 
-        <Box
-          style={{
-            minHeight: 600,
-            width: 390,
-            backgroundColor: "#ffff",
-            border: `2px solid ${theme.palette.primary.main}`,
-            boxShadow: "0 2px 5px 3px #eff1f8",
-            textAlign: "center",
-            padding: 10,
-          }}
-        >
-          {renderPackage("Gói P2", theme.palette.primary.light, true)}
-        </Box>
+        <Box className={classes.box}>{renderPackage(GOI_3, "#f7f8fa")}</Box>
 
-        <Box
-          style={{
-            minHeight: 580,
-            width: 390,
-            border: `2px solid ${theme.palette.primary.main}`,
-            boxShadow: "0 2px 5px 3px #eff1f8",
-            padding: 10,
-            textAlign: "center",
-            boxSizing: "border-box",
-          }}
-        >
-          {renderPackage("Gói P3", "#f7f8fa")}
-        </Box>
+        <Box className={classes.box2}>{renderPackage(GOI_4, "#f7f8fa")}</Box>
       </Box>
     </Box>
   );
