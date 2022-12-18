@@ -86,7 +86,7 @@ const SlideBanner = () => {
           component="h2"
           style={{ fontSize: "30px", fontWeight: "bold" }}
         >
-          P Farm - Muốn "Tâm Vui Vẻ", Chọn "Rau Sức Khỏe"
+          Muốn "Tâm Vui Vẻ", Chọn "Rau Sức Khỏe"
         </Typography>
 
         <Button

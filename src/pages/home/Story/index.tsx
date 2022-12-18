@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import bgStory from "assets/image/bgStory.png";
 import { useStyles } from "./style";
+import { theme } from "theme";
 
 interface IContent {
   txtTitle: string;
@@ -97,16 +98,9 @@ const OurStory = () => {
         <Box className={classes.wrapperContent}>
           <Box>
             {renderContent({
-              txtTitle: "Peace",
-              txtSubtitle: "Hòa bình",
-              content: ` “An ninh lương thực” là 1 vấn đề mang tính toàn cầu và luôn là
-                vấn đề trọng yếu của tất cả mọi quốc gia trên thế giới. Ở P Farm
-                chúng tôi tâm niệm rằng, chỉ khi chúng ta được đảm bảo cung ứng/
-                cung cấp Đủ nguồn Lương thực/ Thực phẩm Sạch, đáp ứng những Tầng
-                nhu cầu đầu tiên và cũng là Nền móng của Tháp nhu cầu Maslow,
-                thì khi đó, “Phú Quý” mới “Sinh Lễ Nghĩa” được. Khi và chỉ khi
-                “Tâm Vui Vẻ”, con người ta mới có thể: “Người với người sống để
-                yêu nhau”, trở thành Gốc Rễ sản sinh ra 1 Thế giới Hòa bình!`,
+              txtTitle: "Package",
+              txtSubtitle: "Gói thuê bao",
+              content: ` “Không còn phải tính toán ngày mai ăn gì, TBR sẽ thay bạn làm điều đó bằng việc cung cấp cho gia đình bạn bữa ăn hoàn chỉnh trong cả tuần, không chỉ dừng lại ở rau củ quả mà còn hướng tới đầy đủ các thành phần: thịt, cá, trứng, đậu,...Các gói sản phẩm của chúng tôi được tính toán & tư vấn bởi chuyên gia dựa trên chế độ dinh dưỡng, sở thích, tình trạng sức khỏe và vẫn đảm bảo độ đa dạng cần thiết cho cả 1 tuần`,
               icon: "https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/icon.png",
               color: "#82bd1a",
             })}
@@ -115,10 +109,7 @@ const OurStory = () => {
             {renderContent({
               txtTitle: "Powerful",
               txtSubtitle: "Sức khỏe nội lực",
-              content: `Masanobu Fukuoka (1913-2008) – 1 Người nông dân, 1 Triết gia, đồng thời cũng là cha 
-              đẻ của Thuật ngữ “Nông nghiệp Tự nhiên” (gốc ý trong tiếng Nhật: “Nông hóa Tự nhiên”, 
-                tiếng Anh: Natural Farming) từng có 1 câu nói trong “Cuộc cách mạng 1 cọng rơm”,
-               đại ý: “Nếu cây lúa khỏe, thì bản thân nó đã có thể đánh bại cây cỏ hại!”`,
+              content: `Cuối cùng, với năng lực nền tảng công nghệ & hệ thống cửa hàng phủ khắp mọi nơi, cùng đội ngũ vận hành chuyên nghiệp và sản phẩm được tuyển chọn khắt khe nhất, TBR sẽ đem lại cho KH sự thuận tiện, sản phẩm chất lượng nhất cho bạn & gia đình. Chúng tôi hướng đến việc thay đổi thói quen người dân Việt Nam mua sắm hàng ngày, để người dân Việt Nam ngày càng có cuộc sống thuận tiện & khỏe mạnh hơn`,
               icon: "https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/icon3.png",
               color: "#ef977f",
             })}
@@ -127,8 +118,8 @@ const OurStory = () => {
         <Box
           className={classes.wrapperContent}
           style={{
-            background:
-              "url('https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/Rectangle.png') no-repeat",
+            // background:
+            //   "url('https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/Rectangle.png') no-repeat",
             minHeight: 655,
             marginTop: -60,
             zIndex: -1,
@@ -138,6 +129,7 @@ const OurStory = () => {
             display: "flex",
             textAlign: "center",
             flexDirection: "column",
+            backgroundColor: theme.palette.primary.main,
           }}
         >
           <Typography
@@ -149,14 +141,14 @@ const OurStory = () => {
             OUR STORY
           </Typography>
           <Typography>
-            P Farm tin tưởng rằng, Dự án sản xuất và kinh doanh Dịch vụ Cung cấp
+            TBR tin tưởng rằng, Dự án sản xuất và kinh doanh Dịch vụ Cung cấp
             Gói Rau An Toàn (Rau Sức Khỏe) tận nơi theo hình thức Thuê Bao Tháng
-            tối ưu hóa tiện ích, tiện lợi, mà P Farm Tiên phong theo đuổi, sẽ
-            mang đến không chỉ những Trải nghiệm hoàn toàn mới cho Người tiêu
-            dùng có Nhu cầu sử dụng Nông sản/ Thực phẩm Sạch, mà đồng thời, cũng
-            có thể trở thành, “1 làn gió mát”, góp phần thay đổi nền sản xuất và
-            cung ứng dịch vụ Nông nghiệp Việt Nam mãi mãi... signature2 Quân
-            Idea Founder P Farm
+            tối ưu hóa tiện ích, tiện lợi, mà TBR Tiên phong theo đuổi, sẽ mang
+            đến không chỉ những Trải nghiệm hoàn toàn mới cho Người tiêu dùng có
+            Nhu cầu sử dụng Nông sản/ Thực phẩm Sạch, mà đồng thời, cũng có thể
+            trở thành, “1 làn gió mát”, góp phần thay đổi nền sản xuất và cung
+            ứng dịch vụ Nông nghiệp Việt Nam mãi mãi... signature2 Quân Idea
+            Founder TBR
           </Typography>
         </Box>
         <Box className={classes.wrapperContent}>
@@ -164,9 +156,7 @@ const OurStory = () => {
             {renderContent({
               txtTitle: "Protect",
               txtSubtitle: "Bảo vệ",
-              content: `Martin Lutherking - nhà hoạt động nhân quyền người Mĩ gốc Phi, từng đoạt giải
-             Nobel Hòa Bình năm 1964, cho rằng: “Trong thế giới này, chúng ta không chỉ xót xa trước lời nói 
-            và hành động của kẻ xấu mà còn cả vì sự im lặng đến đáng sợ của những người tốt”. Xem thêm`,
+              content: `Với tiêu chí "An toàn thực phẩm cho bạn là trách nhiệm của chúng tôi" - sản phẩm của TBR luôn hướng đến việc đảm bảo sản phẩm có mức độ an toàn cao nhất nhằm bảo vệ sức khỏe của bạn & gia đình. Không còn nỗi lo thực phẩm không rõ nguồn gốc, quá hạn,sản phẩm của TBR có xuất xứ từ các đơn vị uy tín, và sẽ được giao đến tay bạn vào buổi sáng để đảm bảo độ tươi của sản phẩm`,
               icon: "https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/icon2.png",
               color: "#ecc347",
               isIconRight: true,
@@ -176,10 +166,7 @@ const OurStory = () => {
             {renderContent({
               txtTitle: "People",
               txtSubtitle: "Con người",
-              content: `Với tiêu chí luôn lấy Con người làm Trung Tâm, là Yếu tố Quan trọng nhất
-               Chi phối toàn bộ các hoạt động Sản xuất & Kinh doanh, P Farm đã, đang và sẽ không 
-               ngưng nâng cấp/ nâng cao, tối ưu hóa, mang tới nhiều tiện lợi, tiện ích nhất cũng
-                như những trải nghiệm mới cho Người tiêu dùng/ Khách hàng của mình`,
+              content: `Với tiêu chí lấy con người làm trung tâm, TBR chúng tôi luôn nỗ lực đem đến sự hài lòng tốt nhất cho bạn. Không ngừng nâng cao chất lượng sản phẩm, cải tiến dịch vụ, sẵn sàng lắng nghe các phản hồi & góp ý, khiếu nại từ phía khách hàng để đem lại những lợi ích vượt trội cho bạn & gia đình`,
               icon: "https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/icon4.png",
               color: "#89d7f0",
               isIconRight: true,
