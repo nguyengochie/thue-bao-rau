@@ -19,10 +19,12 @@ const Header = () => {
           <Typography onClick={() => navigate("/story")}>
             CHUYỆN P FARM
           </Typography>
-          <Typography>GÓI THUÊ BAO RAU</Typography>
-          <Typography>NHẬT KÝ</Typography>
+          <Typography onClick={() => navigate("/combo")}>
+            GÓI THUÊ BAO RAU
+          </Typography>
+          <Typography onClick={() => navigate("/history")}>NHẬT KÝ</Typography>
           <Typography onClick={() => navigate("/news")}>TIN TỨC</Typography>
-          <Typography>LOGIN</Typography>
+          <Typography onClick={() => navigate("/login")}>LOGIN</Typography>
         </Box>
       </Box>
     </Box>

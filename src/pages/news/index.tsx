@@ -1,6 +1,8 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import Product5 from "assets/image/rau5.jpeg";
+import Product6 from "assets/image/rau10.jpeg";
 
 const POST_1 = {
   img: "https://www.morrisons-farming.com/contentassets/f9e4d9e64848470aa4b7d81af4e7ff67/istock-901653798.jpg",
@@ -83,12 +85,12 @@ const News = () => {
             content: POST_1.content,
           })}
           {renderPost({
-            img: POST_1.img,
+            img: Product5,
             title: POST_1.title,
             content: POST_1.content,
           })}
           {renderPost({
-            img: POST_1.img,
+            img: Product6,
             title: POST_1.title,
             content: POST_1.content,
           })}

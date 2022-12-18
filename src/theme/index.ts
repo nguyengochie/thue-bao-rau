@@ -1,4 +1,3 @@
-import { red } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 import "../assets/font/NotoSerif-Regular.ttf";
 import "../assets/font/NotoSerif-Bold.ttf";
@@ -14,6 +13,7 @@ export const theme = createTheme({
     primary: {
       main: "#7fb02a",
       dark: "#299039",
+      light: "#6db90d40",
     },
   },
   typography: {

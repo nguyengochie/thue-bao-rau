@@ -66,7 +66,7 @@ const SlideBanner = () => {
               wordSpacing: 3,
             }}
           >
-            p f a r m . v n
+            f r e s h m a r k e t
           </Typography>
         </Box>
       </Box>

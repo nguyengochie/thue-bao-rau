@@ -1,15 +1,11 @@
-import React from "react";
 import { Box } from "@mui/system";
-import SlideBanner from "./SlideBanner";
-import OurStory from "./Story";
-import Packages from "./packages";
-import ListProducts from "pages/combo/listProduct";
+import Packages from "pages/home/packages";
+import React from "react";
+import ListProducts from "./listProduct";
 
-const index = () => {
+const Combo = () => {
   return (
     <Box>
-      <SlideBanner />
-      <OurStory />
       <Box
         style={{
           display: "block",
@@ -29,4 +25,4 @@ const index = () => {
     </Box>
   );
 };
-export default index;
+export default Combo;

@@ -1,6 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { theme } from "theme";
 import { useStyles } from "./style";
 
 const LIST_INFOR = [
@@ -33,7 +34,11 @@ const Packages = () => {
     });
   };
 
-  const renderPackage = (name: string, bgColor: string) => {
+  const renderPackage = (
+    name: string,
+    bgColor: string,
+    isActivePrice?: boolean
+  ) => {
     return (
       <Box
         bgcolor={bgColor}
@@ -67,7 +72,13 @@ const Packages = () => {
           >
             Tối ưu 01 gia đình 3-4 người/tuần
           </Typography>
-          <Typography style={{ fontSize: 45, fontWeight: "bold" }}>
+          <Typography
+            style={{
+              fontSize: 45,
+              fontWeight: "bold",
+              ...(isActivePrice && { color: theme.palette.primary.main }),
+            }}
+          >
             499.000
             <span style={{ fontWeight: 400, fontSize: 22 }}>/Tuần</span>
           </Typography>
@@ -77,8 +88,9 @@ const Packages = () => {
           variant="contained"
           style={{
             fontFamily: "Roboto,sans-serif",
-            backgroundColor: "#34343c",
+            color: "#ffff",
           }}
+          color="primary"
         >
           Đặt Hàng
         </Button>
@@ -90,7 +102,6 @@ const Packages = () => {
     <Box
       className={classes.root}
       style={{
-        height: "100vh",
         backgroundColor: "orange",
         display: "flex",
         alignItems: "center",
@@ -102,7 +113,6 @@ const Packages = () => {
           "url(https://pfarm.vn/wp-content/themes/pfarm/assets/img/pfarm/bg_v10-min.jpg) no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 0%",
-        paddingTop: 50,
         minHeight: "100%!important",
         boxSizing: "border-box",
       }}
@@ -110,7 +120,12 @@ const Packages = () => {
       <Typography
         variant="h5"
         component="h2"
-        style={{ fontSize: 28, fontWeight: "bold", color: "#ffff" }}
+        style={{
+          fontSize: 28,
+          fontWeight: "bold",
+          color: "#ffff",
+          marginTop: 50,
+        }}
       >
         GÓI THUÊ BAO RAU
       </Typography>
@@ -122,7 +137,7 @@ const Packages = () => {
           style={{
             minHeight: 580,
             width: 390,
-            border: "2px solid #159bd3",
+            border: `2px solid ${theme.palette.primary.main}`,
             boxShadow: "0 2px 5px 3px #eff1f8",
             padding: 10,
             textAlign: "center",
@@ -137,20 +152,20 @@ const Packages = () => {
             minHeight: 600,
             width: 390,
             backgroundColor: "#ffff",
-            border: "2px solid #159bd3",
+            border: `2px solid ${theme.palette.primary.main}`,
             boxShadow: "0 2px 5px 3px #eff1f8",
             textAlign: "center",
             padding: 10,
           }}
         >
-          {renderPackage("Gói P2", "#d7effdbf")}
+          {renderPackage("Gói P2", theme.palette.primary.light, true)}
         </Box>
 
         <Box
           style={{
             minHeight: 580,
             width: 390,
-            border: "2px solid #159bd3",
+            border: `2px solid ${theme.palette.primary.main}`,
             boxShadow: "0 2px 5px 3px #eff1f8",
             padding: 10,
             textAlign: "center",
