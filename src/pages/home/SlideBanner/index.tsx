@@ -55,7 +55,7 @@ const SlideBanner = () => {
               fontWeight: "bold",
             }}
           >
-            Freshmarket x VinID
+            Fresh Market x VinID
           </Typography>
           <Typography
             component="h2"
@@ -86,7 +86,7 @@ const SlideBanner = () => {
           component="h2"
           style={{ fontSize: "30px", fontWeight: "bold" }}
         >
-          Muốn "Tâm Vui Vẻ", Chọn "Rau Sức Khỏe"
+          Rau sạch khoẻ, nhà vui khoẻ
         </Typography>
 
         <Button

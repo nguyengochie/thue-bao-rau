@@ -93,6 +93,11 @@ const Packages = () => {
           height: "100%",
           boxSizing: "border-box",
           color: "#34343c",
+          paddingBottom: "20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <Box
@@ -130,12 +135,13 @@ const Packages = () => {
             <span style={{ fontWeight: 400, fontSize: 22 }}>/Tuần</span>
           </Typography>
         </Box>
-        <Box style={{ padding: 30 }}>{renderInfor(info)}</Box>
+        <Box style={{ padding: "10px 30px" }}>{renderInfor(info)}</Box>
         <Button
           variant="contained"
           style={{
             fontFamily: "Roboto,sans-serif",
             color: "#ffff",
+            width: "fit-content",
           }}
           color="primary"
         >
@@ -188,7 +194,9 @@ const Packages = () => {
 
         <Box className={classes.box}>{renderPackage(GOI_3, "#f7f8fa")}</Box>
 
-        <Box className={classes.box2}>{renderPackage(GOI_4, "#f7f8fa")}</Box>
+        <Box className={classes.box2}>
+          {renderPackage(GOI_4, theme.palette.primary.light, true)}
+        </Box>
       </Box>
     </Box>
   );

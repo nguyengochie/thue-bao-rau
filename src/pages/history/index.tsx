@@ -37,9 +37,16 @@ const History = () => {
     );
   };
 
-  const renderOrder = () => {
+  const renderOrder = (isActive?: boolean) => {
     return (
-      <Card sx={{ minWidth: 275 }} style={{ marginBottom: 10, padding: 10 }}>
+      <Card
+        sx={{ minWidth: 275 }}
+        style={{
+          marginBottom: 10,
+          padding: 10,
+          background: isActive ? theme.palette.primary.light : "#ffff",
+        }}
+      >
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Lịch sử giao hàng
@@ -55,7 +62,9 @@ const History = () => {
             </Typography>
             <Box
               style={{
-                backgroundColor: theme.palette.primary.main,
+                backgroundColor: isActive
+                  ? theme.palette.primary.main
+                  : "#2a7fb0d1",
                 width: "fit-content",
                 borderRadius: "5px",
                 padding: "0 10px",
@@ -63,7 +72,7 @@ const History = () => {
               }}
             >
               <Typography fontWeight="bold" fontFamily="Roboto">
-                Đang giao
+                {isActive ? "Đang giao" : "Sắp giao"}
               </Typography>
             </Box>
           </Box>
@@ -94,13 +103,17 @@ const History = () => {
     return (
       <Box
         style={{
-          backgroundColor: "#ffff",
+          // backgroundColor: "#ffff",
           minHeight: 100,
           display: "flex",
           padding: 10,
           boxSizing: "border-box",
           gap: "10px",
           marginBottom: 10,
+          backgroundColor: theme.palette.primary.light,
+          borderRadius: 5,
+          boxShadow:
+            "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
         }}
       >
         <Box
@@ -191,7 +204,7 @@ const History = () => {
         >
           Nhật Ký Mua Hàng
         </Typography>
-        {renderOrder()}
+        {renderOrder(true)}
         {renderOrder()}
         {renderOrder()}
       </Box>
@@ -227,7 +240,7 @@ const History = () => {
           </Box>
           {renderItemCard({
             img: "https://meatdeli.com.vn/bitrix/templates/Meatdeli/img/bg2-liststore.jpg",
-            name: "Thịt lơn sạch",
+            name: "Thịt lợn sạch",
             desc: "Thịt sạch MeatDeli với công nghệ tiên tiến chuẩn Châu Âu siêu ngon, siêu sạch cho gia đình.",
           })}
           {renderItemCard({
