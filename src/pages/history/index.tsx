@@ -71,7 +71,7 @@ const History = () => {
             Thời gian dự kiến: 20/12/2022
           </Typography>
           <Typography variant="body2">
-            Rau dự kiến: muống, ngót, cà chua
+            Rau dự kiến: Rau lang, rau ngót, cà chua
           </Typography>
           <Box>
             <Typography variant="body2">Gọi ý mua hàng: </Typography>
@@ -90,7 +90,7 @@ const History = () => {
     );
   };
 
-  const renderItemCard = () => {
+  const renderItemCard = ({ img, name, desc }: any) => {
     return (
       <Box
         style={{
@@ -112,18 +112,14 @@ const History = () => {
             backgroundColor: "#ef7925",
           }}
         >
-          <img
-            style={{ height: "100%" }}
-            src="https://tottuoi.com/uploads/san_pham/hat_giong_qua/ca_chua/do_chum_idyii/hat-giong-ca-chua-bi-chum-idyii-mau-do-cay-cao.jpg"
-            alt=""
-          />
+          <img style={{ height: "100%" }} src={img} alt="" />
         </Box>
         <Box style={{ position: "relative", flex: 1 }}>
           <Typography style={{ fontSize: 14, fontWeight: "bold" }}>
-            Cà chua organic
+            {name}
           </Typography>
           <Typography style={{ fontSize: 12, fontStyle: "italic" }}>
-            Cà chua được trồng từ trang trại sạch với tiêu chuẩn châu âu...
+            {desc}
           </Typography>
 
           <Box display="flex" justifyContent="space-between">
@@ -229,9 +225,21 @@ const History = () => {
           >
             <Typography>Sản phẩm mua kèm</Typography>
           </Box>
-          {renderItemCard()}
-          {renderItemCard()}
-          {renderItemCard()}
+          {renderItemCard({
+            img: "https://meatdeli.com.vn/bitrix/templates/Meatdeli/img/bg2-liststore.jpg",
+            name: "Thịt lơn sạch",
+            desc: "Thịt sạch MeatDeli với công nghệ tiên tiến chuẩn Châu Âu siêu ngon, siêu sạch cho gia đình.",
+          })}
+          {renderItemCard({
+            img: "https://product.hstatic.net/200000507665/product/hinh_web_thitheoga_500x500_0005s_0032_xuong_uc_ga_407aefcc2b494e559719ef590cccd3f7_grande.jpg",
+            name: "Xương ức gà 500g",
+            desc: "Xương ức gà có thể dùng để làm nước hầm xương với vị ngọt thanh và cung cấp nhiều dưỡng chất cho cơ thể. ",
+          })}
+          {renderItemCard({
+            img: "https://product.hstatic.net/200000507665/product/sunheocatlat_nolabel_500x500_20974fcea72e4d8cb08b9c78ae272b7b_grande.jpg",
+            name: "Sụn heo cắt lát 350g",
+            desc: "Những miếng sụn giòn thơm ngon được cắt lát từ sụn sườn, sụn mặt trăng, sụn gối,… ",
+          })}
         </Box>
         <Box>
           <Box
@@ -243,9 +251,21 @@ const History = () => {
           >
             <Typography>Thay đổi lượng rau</Typography>
           </Box>
-          {renderItemCard()}
-          {renderItemCard()}
-          {renderItemCard()}
+          {renderItemCard({
+            img: "https://tottuoi.com/uploads/san_pham/hat_giong_qua/ca_chua/do_chum_idyii/hat-giong-ca-chua-bi-chum-idyii-mau-do-cay-cao.jpg",
+            name: "Cà chua organic",
+            desc: "Cà chua được trồng từ trang trại sạch với tiêu chuẩn châu âu...",
+          })}
+          {renderItemCard({
+            img: "https://product.hstatic.net/1000126467/product/05235599_1cbb6e28dfe74b83ba64ee51a5d1f58c_d740d4e0d80645198b9b07d0037307ba_grande.jpg",
+            name: "Rau Lang",
+            desc: "Rau Lang được trồng từ trang trại sạch với tiêu chuẩn châu âu...",
+          })}
+          {renderItemCard({
+            img: "https://product.hstatic.net/1000126467/product/05235445_1431a6b9835143d6a8da0a2076593068_d4237e1a0bc44d838a9c4d5abc4a7168_master.jpg",
+            name: "Rau Ngót",
+            desc: "Rau Ngót được trồng từ trang trại sạch với tiêu chuẩn châu âu...",
+          })}
         </Box>
         <Typography
           fontSize={18}
