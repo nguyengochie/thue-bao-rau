@@ -49,7 +49,7 @@ const History = () => {
       >
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Lịch sử giao hàng
+            Lịch sử giao hàng.
           </Typography>
           <Box
             display="flex"
